@@ -1,0 +1,15 @@
+ apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: demo-namespace
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080   # optional, pick any port 30000-32767
+  type: NodePort
+
+
